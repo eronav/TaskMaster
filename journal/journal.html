@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>TaskMaster</title>
+	<link href="./journal.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="overflow: hidden;">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+	<div class="wrapper">
+		<div class="sidebar" id="sidebar">
+			<a href="/index.html"><img class="homeicon" src="/images/logo.png" alt="logo"></a>
+			<ul>
+				<li class="notcurrent"><a href="/taskPage/taskPage.html"><ion-icon class="tasks"
+							name="checkmark-done-outline"></ion-icon>Tasks</a>
+				</li>
+				<li class="notcurrent"><a href="/pomodoro/pomodoro.html"><ion-icon class="pomodoro"
+							name="timer-outline"></ion-icon>Pomodoro</a>
+				</li>
+				<li class="notcurrent"><a href="/calendar/calendar.html"><ion-icon class="calendar"
+							name="calendar-outline"></ion-icon>Calendar</a>
+				</li>
+				<li class="current"><a href="/journal/journal.html"><ion-icon class=""
+							name="book-outline"></ion-icon>Journal</a></li>
+				<li class="notcurrent"><a href="/resources/resources.html"><ion-icon
+							name="bulb-outline"></ion-icon>Resources</a></li>
+			</ul>
+			<script>
+				function signOut() {
+					localStorage.setItem("accountEmail", "");
+					localStorage.setItem("accountPass", "");
+					window.location.href = "/";
+					isLoggedIn = false;
+				}
+			</script>
+			<div class="signout" id="signout-btn"><button onclick="signOut()"><ion-icon name="exit-outline"></ion-icon>Sign
+					Out</button>
+			</div>
+			<div class="social_media">
+				<a href="#"><ion-icon class="socialicons" name="logo-facebook"></ion-icon></a>
+				<a href="#"><ion-icon class="socialicons" name="logo-twitter"></ion-icon></a>
+				<a href="#"><ion-icon class="socialicons" name="logo-instagram"></ion-icon></a>
+			</div>
+		</div>
+		<div class="main_content">
+			<h1 class="header" style="color: white; margin-top: 0px;">Journals</h1>
+			<div class="journals-container" style=display: flex; flex-wrap: wrap; justify-content: start; padding: 20px;>
+			</div>
+			<div class="container">
+				<button onclick="titleCaller()" class="add-notebook"></button>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div id="titleModal" class="modal">
+		<div class="modal-content">
+			<span class="close" id="close-btn" onclick="setTitleModalStyle()">&times;</span>
+			<h2>Enter Title Name</h2>
+			<input type="text" id="titleInput" placeholder="Type your title here..." onkeypress="checkForEnter()">
+			<button style="background-color: var(--lightcoral)" onclick="setTitle()">Set Title</button>
+		</div>
+	</div>
+
+	<!-- Container for the journals -->
+	<script src="./journal.js"></script>
+</body>
+
+</html>

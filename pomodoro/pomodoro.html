@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TaskMaster</title>
+
+	<!-- FONT -->
+	<link rel="preconnect" href="h  ttps://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+	<!-- ICONS -->
+	<script src="https://kit.fontawesome.com/6f3103b13c.js" crossorigin="anonymous"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="./pomdoro.css">
+
+
+</head>
+
+<body>
+	<audio id="timerChime" src="/images/pomodoroChime.mp3" preload="auto"></audio>
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+	<div class="wrapper">
+		<div class="sidebar" id="sidebar">
+			<a href="/index.html"><img class="homeicon" src="/images/logo.png" alt="logo"></a>
+			<ul>
+				<li class="notcurrent"><a href="/taskPage/taskPage.html"><ion-icon class="tasks"
+							name="checkmark-done-outline"></ion-icon>Tasks</a>
+				</li>
+				<li class="current"><a href="/pomodoro/pomodoro.html"><ion-icon class="pomodoro"
+							name="timer-outline"></ion-icon>Pomodoro</a>
+				</li>
+				<li class="notcurrent"><a href="/calendar/calendar.html"><ion-icon class="calendar"
+							name="calendar-outline"></ion-icon>Calendar</a>
+				</li>
+				<li class="notcurrent"><a href="/journal/journal.html"><ion-icon class="journal"
+							name="book-outline"></ion-icon>Journal</a></li>
+				<li class="notcurrent"><a href="/resources/resources.html"><ion-icon
+							name="bulb-outline"></ion-icon>Resources</a></li>
+			</ul>
+			<script>
+				function signOut() {
+					localStorage.setItem("accountEmail", "");
+					localStorage.setItem("accountPass", "");
+					window.location.href = "/";
+					isLoggedIn = false;
+				}
+			</script>
+			<div class="signout" id="signout-btn"><button onclick="signOut()"><ion-icon name="exit-outline"></ion-icon>Sign
+					Out</button>
+			</div>
+			<div class="social_media">
+				<a href="#"><ion-icon class="socialicons" name="logo-facebook"></ion-icon></a>
+				<a href="#"><ion-icon class="socialicons" name="logo-twitter"></ion-icon></a>
+				<a href="#"><ion-icon class="socialicons" name="logo-instagram"></ion-icon></a>
+			</div>
+		</div>
+		<div class="main_content">
+			<div class="info">
+				<section>
+					<div class="container">
+						<h1>pomodoro</h1>
+
+						<div class="painel">
+							<p id="work">work</p>
+							<p id="break">break</p>
+						</div>
+
+						<div class="timer">
+							<div class="circle">
+								<div class="time">
+									<p id="minutes"></p>
+									<p>:</p>
+									<p id="seconds"></p>
+								</div>
+							</div>
+						</div>
+
+						<div class="controls">
+							<button id="start" onclick="start()"><i class="fa-solid fa-play"></i></button>
+							<button id="pause" onclick="togglePause()" class="control-button" style="display: none;"><i
+									class="fa-solid fa-pause"></i></button>
+							<a id="reset" href="./pomodoro.html" class="control-button" style="display: none;"><i
+									class="fa-solid fa-arrow-rotate-left"></i></a>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- SCRIPT -->
+	<script src="./pomodoro.js"></script>
+</body>
+
+</html>

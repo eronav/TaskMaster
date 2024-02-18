@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TaskMaster</title>
+	<link rel="stylesheet" href="./taskPage.css" </head>
+
+<body>
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+	<div class="wrapper">
+		<div class="sidebar" id="sidebar">
+			<a href="/index.html"><img class="homeicon" src="/images/logo.png" alt="logo"></a>
+			<ul>
+				<li class="current"><a href="/taskPage/taskPage.html"><ion-icon class="tasks"
+							name="checkmark-done-outline"></ion-icon>Tasks</a>
+				</li>
+				<li class="notcurrent"><a href="/pomodoro/pomodoro.html"><ion-icon class="pomodoro"
+							name="timer-outline"></ion-icon>Pomodoro</a>
+				</li>
+				<li class="notcurrent"><a href="/calendar/calendar.html"><ion-icon class="calendar"
+							name="calendar-outline"></ion-icon>Calendar</a>
+				</li>
+				<li class="notcurrent"><a href="/journal/journal.html"><ion-icon class="journal"
+							name="book-outline"></ion-icon>Journal</a></li>
+				<li class="notcurrent"><a href="/resources/resources.html"><ion-icon
+							name="bulb-outline"></ion-icon>Resources</a></li>
+			</ul>
+			<script>
+				function signOut() {
+					localStorage.setItem("accountEmail", "");
+					localStorage.setItem("accountPass", "");
+					window.location.href = "/";
+					isLoggedIn = false;
+				}
+			</script>
+			<div class="signout" id="signout-btn"><button onclick="signOut()"><ion-icon name="exit-outline"></ion-icon>Sign
+					Out</button>
+			</div>
+			<div class="social_media">
+				<a href="#"><ion-icon class="socialicons" name="logo-facebook"></ion-icon></a>
+				<a href="#"><ion-icon class="socialicons" name="logo-twitter"></ion-icon></a>
+				<a href="#"><ion-icon class="socialicons" name="logo-instagram"></ion-icon></a>
+			</div>
+		</div>
+		<div class="main_content">
+			<div class="info">
+				<div class="container">
+					<div class="todo-app">
+						<div style="display: flex; justify-content: space-around; margin-bottom: 0; align-items: center;">
+							<h2 style="margin-left: 0; margin-right: auto">To-Do List<img src="/images/icon.png"></h2>
+							<select class="weeksFormat" id="setting" style="height: 30px;">
+								<option value="0">Monday</option>
+								<option value="1">Tuesday</option>
+								<option value="2">Wednesday</option>
+								<option value="3">Thursday</option>
+								<option value="4">Friday</option>
+								<option value="5">Saturday</option>
+								<option value="6">Sunday</option>
+								<option value="7">Week</option>
+							</select>
+						</div>
+						<div class="row">
+							<input type="text" id="input-box" placeholder="Add your text">
+							<button class="addbutton" onclick="addTask()">Add</button>
+						</div>
+						<ul id="list-container">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="taskPage.js"></script>
+</body>
+
+</html>

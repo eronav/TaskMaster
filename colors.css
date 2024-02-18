@@ -1,0 +1,223 @@
+:root {
+  --darkBlue: #2274A5;
+  --lightBlue: #AFD2E9;
+  --beige: #FFE0B5;
+  --brown: #462521;
+  --green: #7B9E87;
+  --platinum: #CFD8D7;
+  --lightcoral: #F17E7E;
+  --spacecadet: #202241;
+  --bgcolor: hsl(235, 35%, 19%)
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+  background-color: var(--bgcolor);
+}
+
+.wrapper {
+  display: flex;
+  position: relative;
+}
+
+.wrapper .sidebar {
+  width: 200px;
+  height: 100%;
+  background: black;
+  padding: 30px 0px;
+  position: fixed;
+}
+
+.notcurrent {
+  padding-left: 15px;
+  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: black;
+  -webkit-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+
+.current {
+  padding-left: 15px;
+  background-color: rgba(240, 116, 116, 0.8);
+  color: black;
+}
+
+.notcurrent a {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  height: 80px;
+  margin: 0%;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.current a {
+  color: black;
+  display: block;
+  font-size: 20px;
+  height: 80px;
+  padding: 25px;
+}
+
+.wrapper .sidebar ul li a ion-icon {
+  width: 35px;
+}
+
+.notcurrent:hover {
+  background-color: rgba(240, 116, 116, 0.5);
+  height:
+    -webkit-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+}
+
+.wrapper .sidebar .social_media {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.wrapper .sidebar .social_media a {
+  border-radius: 10px;
+  display: block;
+  width: 40px;
+  background: #fff;
+  -webkit-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+  height: 40px;
+  line-height: 45px;
+  text-align: center;
+  margin: 0 5px;
+  color: #000;
+  -webkit-transition: color 250ms linear;
+  -ms-transition: color 250ms linear;
+  transition: color 250ms linear;
+  margin-right: 10px;
+  margin-left: 10px;
+
+}
+
+.wrapper .sidebar .social_media a:hover {
+  background: #4a4a4a;
+  -webkit-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+  color: #fff;
+  -webkit-transition: color 250ms linear;
+  -ms-transition: color 250ms linear;
+  transition: color 250ms linear;
+}
+
+.socialicons {
+  border-radius: 10px;
+  font-size: 30px;
+  padding: 5px;
+  background-color: white;
+  -webkit-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+  color: #ee5959;
+  -webkit-transition: color 250ms linear;
+  -ms-transition: color 250ms linear;
+  transition: color 250ms linear;
+}
+
+.wrapper .sidebar .social_media a:hover .socialicons {
+  background: #ee5959;
+  -webkit-transition: background-color 250ms linear;
+  -ms-transition: background-color 250ms linear;
+  transition: background-color 250ms linear;
+  color: #fff;
+  -webkit-transition: color 250ms linear;
+  -ms-transition: color 250ms linear;
+  transition: color 250ms linear;
+}
+
+.wrapper .main_content {
+  width: 100%;
+  margin-left: 200px;
+  height: 100vh;
+}
+
+.wrapper .main_content .info {
+  margin: 5px;
+  height: 85%;
+  color: #717171;
+  line-height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.wrapper .main_content .header {
+  padding-top: 85px;
+  color: black;
+  font-size: 80px;
+  text-align: center;
+}
+
+.homeicon {
+  width: 100px;
+  margin-left: 45px;
+  margin-right: 45px;
+  height: auto;
+}
+
+.signout {
+  margin-left: 5px;
+}
+
+.signout button {
+  height: 40px;
+  position: absolute;
+  bottom: 75px;
+  cursor: pointer;
+  margin: 0px 7%;
+  font-size: 20px;
+  color: #ee5959;
+  transition: 0.5s;
+  border-radius: 10px;
+  width: 165px;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.signout button ion-icon {
+  margin-left: 11px;
+  margin-right: 11px;
+  margin-bottom: 2px;
+}
+
+.signout button:hover {
+  color: white;
+  background-color: #ee5959;
+}
+
+@media (max-height: 500px) {
+  .social_media {
+    display: none !important;
+  }
+}

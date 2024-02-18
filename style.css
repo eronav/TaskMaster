@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+@import "colors.css";
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Raleway", sans-serif;
+	height: 100vh;
+	width: 100vw;
+	background-image: url('/images/background.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	/* Adjusts the width to 100% and height automatically */
+	background-position: center center;
+	/* Center the image horizontally and vertically */
+	overflow-x: hidden;
+}
+
+
+
+
+p {
+	position: absolute;
+	left: 300px;
+	top: 300px;
+	font-size: 100px;
+	width: 150%;
+	color: #CFD8D7;
+}
+
+.center button {
+	position: absolute;
+	right: 110px;
+	top: 80px;
+	padding: 10px 20px;
+	font-size: 15px;
+	font-weight: 600;
+	color: #222;
+	background: #f5f5f5;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.popup {
+	position: absolute;
+	top: -150%;
+	left: 50%;
+	opacity: 0;
+	transform: translate(-50%, -50%) scale(1.25);
+	width: 380px;
+	padding: 20px 30px;
+	background: #fff;
+	box-shadow: 0px 0px 100vw 100vh rgba(0, 0, 0, 0.77);
+	border-radius: 10px;
+	transition: top 0ms ease-in-out 200ms,
+		opacity 200ms ease-in-out 0ms,
+		transform 20ms ease-in-out 0ms;
+}
+
+.popup.active {
+	top: 50%;
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
+	transition: top 0ms ease-in-out 0ms,
+		opacity 200ms ease-in-out 0ms,
+		transform 20ms ease-in-out 0ms;
+
+}
+
+.popup .close-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 15px;
+	height: 15px;
+	background: #888;
+	color: #eee;
+	text-align: center;
+	line-height: 15px;
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+#show-login {
+	margin-top: 40px;
+	background-color: rgba(255, 255, 255, 0);
+	border: 2px solid white;
+	color: white;
+	transition: background-color 0.75s, color 0.75s;
+}
+
+#show-login:hover {
+	background-color: rgba(255, 255, 255, 1);
+	color: black;
+}
+
+.popup .form h2 {
+	text-align: center;
+	color: #222;
+	margin: 10px 0px 20px;
+	font-size: 25px;
+}
+
+.popup .form .form-element {
+	margin: 15px 0px;
+	display: flex;
+	flex-direction: column;
+}
+
+.popup .form .form-element label {
+	font-size: 14px;
+	color: #222;
+}
+
+#login-email,
+#login-password,
+#signup-email,
+#signup-password {
+	margin-top: 5px;
+	display: block;
+	width: 100%;
+	padding: 10px;
+	outline: none;
+	border: 1px solid #aaa;
+	border-radius: 5px;
+}
+
+.popup .form .form-element input[type="checkbox"] {
+	margin-right: 5px;
+}
+
+.popup .form .form-element button {
+	width: 100%;
+	height: 40px;
+	border: none;
+	outline: none;
+	font-size: 15px;
+	background: #222;
+	color: #f5f5f5;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.popup .form .form-element a {
+	display: block;
+	text-align: right;
+	font-size: 15px;
+	color: #1a79ca;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.main_content {
+	background: rgba(0, 0, 0, 0) url('/images/background2.png') width(100%);
+}
+
+.sections {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.section1 {
+	height: 100vh;
+	background: rgba(32, 34, 65, 0.6);
+}
+
+.section1 h1 {
+	font-size: 10em;
+	text-align: center;
+	margin-top: 50px;
+	width: 100%;
+	left: 200px;
+	top: 45px;
+	z-index: 1;
+	color: var(--platinum);
+}
+
+.section1 p {
+	padding-top: 50px;
+	width: 75%;
+	text-align: center;
+	line-height: 1.6em;
+}
+
+.section1 p span {
+	font-size: 3em;
+	color: var(--lightcoral);
+}
+
+.section2 {
+	height: 100vh;
+	width: 99%;
+	display: flex;
+	align-items: left;
+	justify-content: top;
+	padding-right: 30%;
+	background: rgba(255, 255, 255, 1);
+}
+
+.section2 p {
+	position: absolute;
+	font-size: 40px;
+	width: 750px;
+	color: black;
+	left: 32%;
+	top: 125%;
+
+}
+
+/* Smooth scrolling effect for the whole document */
+html {
+	scroll-behavior: smooth;
+}
+
+.sidebar {
+	z-index: 1;
+	top: 0;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>TaskMaster</title>
+	<link href="/resources/engineering.css" rel="stylesheet" />
+</head>
+
+<body>
+
+
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+	<div class="wrapper">
+		<div class="sidebar" id="sidebar">
+			<a href="/index.html"><img class="homeicon" src="/images/logo.png" alt="logo"></a>
+			<ul>
+				<li class="notcurrent"><a href="/taskPage/taskPage.html"><ion-icon class="tasks"
+							name="checkmark-done-outline"></ion-icon>Tasks</a>
+				</li>
+				<li class="notcurrent"><a href="/pomodoro/pomodoro.html"><ion-icon class="pomodoro"
+							name="timer-outline"></ion-icon>Pomodoro</a>
+				</li>
+				<li class="notcurrent"><a href="/calendar/calendar.html"><ion-icon class="calendar"
+							name="calendar-outline"></ion-icon>Calendar</a>
+				</li>
+				<li class="notcurrent"><a href="/journal/journal.html"><ion-icon class="journal"
+							name="book-outline"></ion-icon>Journal</a></li>
+				<li class="current"><a href="/resources/resources.html"><ion-icon name="bulb-outline"></ion-icon>Resources</a>
+				</li>
+			</ul>
+			<script>
+				function signOut() {
+					localStorage.setItem("accountEmail", "");
+					localStorage.setItem("accountPass", "");
+					window.location.href = "/";
+					isLoggedIn = false;
+				}
+			</script>
+			<div class="signout" id="signout-btn"><button onclick="signOut()"><ion-icon name="exit-outline"></ion-icon>Sign
+					Out</button>
+			</div>
+			<div class="social_media">
+				<a href="#"><ion-icon class="socialicons" name="logo-facebook"></ion-icon></a>
+				<a href="#"><ion-icon class="socialicons" name="logo-twitter"></ion-icon></a>
+				<a href="#"><ion-icon class="socialicons" name="logo-instagram"></ion-icon></a>
+			</div>
+		</div>
+		<div class="main_content">
+			<div class="info">
+				<div class="container">
+					<div class="row1">
+						<a href="https://www.msuesc.com/engineering-clubs" target="_blank">
+							<button class="btn btn1"><ion-icon name="hardware-chip-outline"></ion-icon>Engineering Clubs</button>
+						</a>
+						<a href="https://devpost.com" target="_blank">
+							<button class="btn btn2"><ion-icon name="hardware-chip-outline"></ion-icon>Hackathon</button>
+						</a>
+						<a href="https://blog.collegevine.com/research-paper-topics-for-high-schoolers" target="_blank">
+							<button class="btn btn3"><ion-icon name="hardware-chip-outline"></ion-icon>Research Projects </button>
+						</a>
+						<a href="https://blog.collegevine.com/high-school-summer-programs-in-california" target="_blank">
+							<button class="btn btn4"><ion-icon name="hardware-chip-outline"></ion-icon>Summer Programs</button>
+						</a>
+					</div>
+					<div class="row2">
+						<a href="https://www.wired.com/story/3d-printing-beginner-tips/" target="_blank">
+							<button class="btn btn5"><ion-icon name="hardware-chip-outline"></ion-icon>3D printing</button>
+						</a>
+						<a href="https://medium.com/@ankitswami.calinfo/55-exciting-aerospace-engineering-project-ideas-for-all-ages-60b2f269e0eb"
+							target="_blank">
+							<button class="btn btn6"><ion-icon name="hardware-chip-outline"></ion-icon>Aerospace Projects</button>
+						</a>
+						<a href="https://www.simplilearn.com/tutorials/cyber-security-tutorial/cyber-security-for-beginners"
+							target="_blank">
+							<button class="btn btn7"><ion-icon name="hardware-chip-outline"></ion-icon>Cyber Security Clubs </button>
+						</a>
+						<a href="https://www.energy.gov/energysaver/opportunities-high-school-students" target="_blank">
+							<button class="btn btn8"><ion-icon name="hardware-chip-outline"></ion-icon>Renewable energy
+								projects</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

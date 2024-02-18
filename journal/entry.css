@@ -1,0 +1,75 @@
+@import "/colors.css";
+
+body {
+  margin: 0;
+  /* Reset default margin to utilize full viewport */
+  padding: 5vh 5vw;
+  /* Provide padding around the content for better spacing */
+  font-family: 'Arial', sans-serif;
+  /* Use a more modern font */
+  background-color: var(--spacecadet);
+  /* Light background for ease of reading */
+}
+
+#title-field {
+  color: var(--platinum);
+  /* Darker color for better readability */
+  margin-bottom: 3vh;
+  font-size: 3.5em;
+  /* Increase title font size */
+  text-align: center;
+  /* margin-top: 0; */
+  /* Center-align the title */
+}
+
+#entry-field {
+  width: calc(100% - 2vw);
+  /* Adjust width to account for padding */
+  height: 70vh;
+  padding: 20px;
+  /* Increase padding for more space inside the text area */
+  margin: auto;
+  /* Center the text area in the page */
+  display: block;
+  /* Ensure it's a block element for margin to work */
+  border-radius: 8px;
+  /* Add rounded corners */
+  border: 1px solid var(--platinum);
+  /* Subtle border */
+  background-color: var(--platinum);
+  /* White background for contrast */
+  font-size: 1em;
+  /* Standard text size */
+  color: var(--spacecadet);
+  /* Standard text color for readability */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Soft shadow for depth */
+}
+
+#submit-icon,
+#back-icon {
+  position: fixed;
+  /* Use fixed positioning to stick icons to the viewport */
+  width: 50px;
+  /* Set a standard width for the icons */
+  height: 50px;
+  /* Set a standard height for the icons */
+  cursor: pointer;
+  /* Change cursor to indicate clickable items */
+  z-index: 100;
+  /* Ensure icons stay above other content */
+}
+
+#submit-icon {
+  bottom: 170px;
+  /* Distance from the bottom of the viewport */
+  right: 120px;
+  /* Distance from the right of the viewport */
+}
+
+#back-icon {
+  top: 20px;
+  left: 30px;
+  height: 65px;
+  width: 65px;
+}

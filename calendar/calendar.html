@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description"
+		content="Stay organized with our user-friendly Calendar featuring events, reminders, and a customizable interface. Built with HTML, CSS, and JavaScript. Start scheduling today!" />
+	<meta name="keywords" content="calendar, events, reminders, javascript, html, css, open source coding" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+		integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="./calendar.css" />
+	<title>TaskMaster</title>
+</head>
+
+<body>
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+	<div class="wrapper">
+		<div class="sidebar" id="sidebar">
+			<a href="/index.html"><img class="homeicon" src="/images/logo.png" alt="logo"></a>
+			<ul>
+				<li class="notcurrent"><a href="/taskPage/taskPage.html"><ion-icon class="tasks"
+							name="checkmark-done-outline"></ion-icon>Tasks</a>
+				</li>
+				<li class="notcurrent"><a href="/pomodoro/pomodoro.html"><ion-icon class="pomodoro"
+							name="timer-outline"></ion-icon>Pomodoro</a>
+				</li>
+				<li class="current"><a href="/calendar/calendar.html"><ion-icon name="calendar-outline"></ion-icon>Calendar</a>
+				</li>
+				<li class="notcurrent"><a href="/journal/journal.html"><ion-icon class="journal"
+							name="book-outline"></ion-icon>Journal</a></li>
+				<li class="notcurrent"><a href="/resources/resources.html"><ion-icon
+							name="bulb-outline"></ion-icon>Resources</a></li>
+			</ul>
+			<script>
+				function signOut() {
+					localStorage.setItem("accountEmail", "");
+					localStorage.setItem("accountPass", "");
+					window.location.href = "/";
+					isLoggedIn = false;
+				}
+			</script>
+			<div class="signout" id="signout-btn"><button onclick="signOut()"><ion-icon name="exit-outline"></ion-icon>Sign
+					Out</button>
+			</div>
+			<div class="social_media">
+				<a href="#"><ion-icon class="socialicons" name="logo-facebook"></ion-icon></a>
+				<a href="#"><ion-icon class="socialicons" name="logo-twitter"></ion-icon></a>
+				<a href="#"><ion-icon class="socialicons" name="logo-instagram"></ion-icon></a>
+			</div>
+		</div>
+		<div class="main_content">
+			<div class="info">
+				<div class="container">
+					<div class="left">
+						<div class="calendar">
+							<div class="month">
+								<i class="fas fa-angle-left prev"></i>
+								<div class="date">december 2015</div>
+								<i class="fas fa-angle-right next"></i>
+							</div>
+							<div class="weekdays">
+								<div>Sun</div>
+								<div>Mon</div>
+								<div>Tue</div>
+								<div>Wed</div>
+								<div>Thu</div>
+								<div>Fri</div>
+								<div>Sat</div>
+							</div>
+							<div class="days"></div>
+							<div class="goto-today">
+								<div class="goto">
+									<input type="text" placeholder="mm/yyyy" class="date-input" />
+									<button class="goto-btn">Go</button>
+								</div>
+								<button class="today-btn">Today</button>
+							</div>
+						</div>
+					</div>
+					<div class="right">
+						<div class="today-date">
+							<div class="event-day">wed</div>
+							<div class="event-date">12th december 2022</div>
+						</div>
+						<div class="events"></div>
+						<div class="add-event-wrapper">
+							<div class="add-event-header">
+								<div class="title">Add Event</div>
+								<i class="fas fa-times close"></i>
+							</div>
+							<div class="add-event-body">
+								<div class="add-event-input">
+									<input type="text" placeholder="Event Name" class="event-name" />
+								</div>
+								<div class="add-event-input">
+									<input type="text" placeholder="Event Time From" class="event-time-from" />
+									<select id="ampmfrom">
+										<option value="am">AM</option>
+										<option value="pm">PM</option>
+									</select>
+								</div>
+								<div class="add-event-input">
+									<input type="text" placeholder="Event Time To" class="event-time-to" />
+									<select id="ampmto">
+										<option value="am">AM</option>
+										<option value="pm">PM</option>
+									</select>
+								</div>
+							</div>
+							<div class="add-event-footer">
+								<button class="add-event-btn">Add Event</button>
+							</div>
+						</div>
+					</div>
+					<button class="add-event">
+						<i class="fas fa-plus"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="./calendar.js"></script>
+</body>
+
+</html>

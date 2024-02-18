@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>TaskMaster</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script src="script.js"></script>
+</head>
+
+<body>
+
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	<div class="text-animate">
+		<div class="wrapper">
+			<div class="sidebar" id="sidebar">
+				<a href="/index.html"><img class="homeicon" src="/images/logo.png" alt="logo"></a>
+				<ul>
+					<li class="notcurrent"><a href="/taskPage/taskPage.html"><ion-icon class="tasks"
+								name="checkmark-done-outline"></ion-icon>Tasks</a>
+					</li>
+					<li class="notcurrent"><a href="/pomodoro/pomodoro.html"><ion-icon class="pomodoro"
+								name="timer-outline"></ion-icon>Pomodoro</a>
+					</li>
+					<li class="notcurrent"><a href="/calendar/calendar.html"><ion-icon class="calendar"
+								name="calendar-outline"></ion-icon>Calendar</a>
+					</li>
+					<li class="notcurrent"><a href="/journal/journal.html"><ion-icon class="journal"
+								name="book-outline"></ion-icon>Journal</a></li>
+					<li class="notcurrent"><a href="/resources/resources.html"><ion-icon
+								name="bulb-outline"></ion-icon>Resources</a></li>
+				</ul>
+				<script>
+					function signOut() {
+						localStorage.setItem("accountEmail", "");
+						localStorage.setItem("accountPass", "");
+						window.location.href = "/";
+						isLoggedIn = false;
+					}
+				</script>
+				<div class="signout" id="signout-btn"><button onclick="signOut()"><ion-icon name="exit-outline"></ion-icon>Sign
+						Out</button>
+				</div>
+				<div class="social_media">
+					<a href="#"><ion-icon class="socialicons" name="logo-facebook"></ion-icon></a>
+					<a href="#"><ion-icon class="socialicons" name="logo-twitter"></ion-icon></a>
+					<a href="#"><ion-icon class="socialicons" name="logo-instagram"></ion-icon></a>
+				</div>
+			</div>
+			<div class="main_content">
+				<div class="sections">
+					<div class="section1">
+						<h1>TaskMaster</h1>
+						<p class="WorkManagement">work management made <br><span class="easy">easy.</span></p>
+					</div>
+					<div class="section2">
+						<p>
+							Introducing TaskMaster. A platform that helps you manage your time and tasks. With TaskMaster, you can
+							easily create tasks, track your progress, and stay organized. Whether you're a student, a professional, or
+							just someone who needs to stay on track, TaskMaster is the perfect tool for you. Get started today and
+							start
+							managing your time and tasks with TaskMaster!
+
+						</p>
+					</div>
+					<div class="center" id="login-btn-div">
+						<button id="show-login" onclick="showLogin()">Log In</button>
+					</div>
+					<div class="popup" id="login-popup">
+						<div class="close-btn" id="login-close-btn" onclick="loginCloseClicked()">&times;</div>
+						<div class="form">
+							<h2>Log In</h2>
+							<div>
+								<label id="login-error-message" style="color: red; opacity: 0;">Please fill in the username and
+									password.</label>
+							</div>
+							<div class="form-element">
+								<label for="email">Email</label>
+								<input type="text" id="login-email" placeholder="Enter Email">
+							</div>
+							<div class="form-element">
+								<label for="password">Password</label>
+								<input type="password" id="login-password" placeholder="Enter Password">
+							</div>
+							<div style="color: black; display: inline"><small>Don't have an account?</small></div>
+							<div style="color: var(--lightcoral); display: inline; cursor: pointer;" onclick="showSignUp()">
+								<small>Sign up</small>
+							</div>
+							<div class="form-element">
+								<button style="background-color: var(--lightcoral);" onclick="login()">Log in</button>
+							</div>
+						</div>
+					</div>
+					<div class="popup" id="signup-popup">
+						<div class="close-btn" id="signup-close-btn" onclick="signupCloseClicked()">&times;</div>
+						<div class="form">
+							<h2>Sign Up</h2>
+							<div>
+								<label id="signup-error-message" style="color: red; opacity: 0;">Please enter a valid email and
+									password</label>
+							</div>
+							<div class="form-element">
+								<label for="email">Email</label>
+								<input type="text" id="signup-email" placeholder="Enter Email">
+							</div>
+							<div class="form-element">
+								<label for="password">Password</label>
+								<input type="password" id="signup-password" placeholder="Enter Password">
+							</div>
+							<div style="color: black; display: inline"><small>Already have an account?</small></div>
+							<div style="color: var(--lightcoral); display: inline; cursor: pointer;" onclick="showLogin()"><small>Log
+									in</small>
+							</div>
+							<div class="form-element">
+								<button style="background-color: var(--lightcoral)" onclick="addNewUser()">Sign Up</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
